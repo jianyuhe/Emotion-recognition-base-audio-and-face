@@ -1,0 +1,93 @@
+
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% load staticfiles %}
+ <head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<title>Emotion Recognition</title>
+		<link rel="stylesheet" href="{% static 'css/app.css' %}" />
+	</head>
+
+  <body>
+
+  <div class="header">
+			<h1 class="header-title">Emotion Recognition</h1>
+		</div>
+
+            <div class="wrapper">
+			<div class="content">
+				<div class="col col-l">
+					<div class="xpanel-wrapper xpanel-wrapper-60">
+						<div class="xpanel xpanel-l-t">
+							<div class="title"><p>Current Face Emotion Recognition </p></div>
+                             <img src = "{% url 'f_bar_chart' %}"/>
+						</div>
+					</div>
+					<div class="xpanel-wrapper xpanel-wrapper-40">
+						<div class="xpanel xpanel-l-b">
+							<div class="title"><p>Semantic Emotion Recognition</p></div>
+                            <img src = "{% url 'text_bar_chart' %}" id="flash"/>
+						</div>
+					</div>
+				</div>
+				<div class="col col-c">
+					<div class="xpanel-wrapper xpanel-wrapper-75">
+						<div class="xpanel no-bg">
+                            <img src = "{% url 'frame_feed' %}" />
+						</div>
+					</div>
+					<div class="xpanel-wrapper xpanel-wrapper-25">
+						<div class="xpanel xpanel-c-b">
+                            <img src = "/static/img/chart_color.png" />
+						</div>
+					</div>
+				</div>
+				<div class="col col-r">
+					<div class="xpanel-wrapper xpanel-wrapper-60">
+						<div class="xpanel xpanel-r-t">
+							<div class="title"><p>Face Emotion Recognition Trend</p></div>
+                            <img src = "{% url 'data1' %}" />
+						</div>
+					</div>
+
+					<div class="xpanel-wrapper xpanel-wrapper-40">
+						<div class="xpanel xpanel-r-b">
+							<div class="title"><p>Audio emotion recognition</p></div>
+                            <img src = "{% url 'audio_bar_stream' %}" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script type="text/javascript">
+
+{#  $(document).ready(function(){#}
+{#      setInterval(function() {#}
+{#        $.get("{% url 'text_bar_chart' %}" + window.location.search,//GET请求的url地址#}
+{#        function(data){#}
+{#          });#}
+{#        }, 4000);   });#}
+{#setInterval(function () {#}
+{#    $("#flash").attr("src", "{% url 'text_bar_chart' %}");#}
+{#}, 4000);#}
+
+{#    $(document).ready(function(){#}
+{#      setInterval(function() {#}
+{#        $.get("{% url 'text_bar_chart' %}" + window.location.search,//GET请求的url地址#}
+{#        function(data){#}
+{#           $("#flash").html(data);//更新列表内容#}
+{#          });#}
+{#        }, 10000);   });#}
+{##}
+{#setInterval(function () {#}
+{#    $("#flash").attr("src", "{% url 'text_bar_chart' %}");#}
+{#}, 1000);#}
+</script>
+
+
+  </body>
+
+</html>
